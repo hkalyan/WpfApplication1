@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Data;
+using System.Collections.ObjectModel;
 
 namespace WpfApplication1
 {
@@ -23,19 +23,41 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
-            dataGrid1_SetRows();
+            Loaded += new RoutedEventHandler(MainWindow_Loaded);
         }
 
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataGridTextColumn c1 = new DataGridTextColumn();
+            c1.Header = "Name";
+            c1.Binding = new Binding("Name");
+            c1.Width = 80;
+            dataGrid1.Columns.Add(c1);
+            DataGridTextColumn c2 = new DataGridTextColumn();
+            c2.Header = "Email";
+            c2.Width = 120;
+            c2.Binding = new Binding("Email");
+            dataGrid1.Columns.Add(c2);
+            DataGridTextColumn c3 = new DataGridTextColumn();
+            c3.Header = "UIN";
+            c3.Width = 80;
+            c3.Binding = new Binding("UIN");
+            dataGrid1.Columns.Add(c3);
+
+            dataGrid1.Items.Add(new Item() { Name = "Sherni Minu", Email = "srajaram", UIN = "00905111" });
+            dataGrid1.Items.Add(new Item() { Name = "Hari Phaneendra", Email = "hkalyan", UIN = "00901369" });
+         
+        }
         private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+    }
 
-        private void dataGrid1_SetRows()
-        {
-
-            DataGridRow row1 = new DataGridRow();
-
-        }
+    public class Item
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string UIN { get; set; }
     }
 }
