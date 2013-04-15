@@ -1,9 +1,9 @@
 ﻿<Window x:Class="WpfApplication1.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Window1" Height="508" Width="728">
-    <Grid>
-        <Rectangle Height="51" HorizontalAlignment="Left" Margin="12,12,0,0" Name="rectangle1" Stroke="Black" VerticalAlignment="Top" Width="682">
+        Title="Window1" Height="605" Width="845">
+    <Grid Background="Gainsboro">
+        <Rectangle Height="51" HorizontalAlignment="Left" Margin="12,12,0,0" Name="rectangle1" Stroke="Black" VerticalAlignment="Top" Width="799">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF468ECB" Offset="0.198" />
@@ -11,6 +11,46 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Tomasulo's Algorithm" FontSize="18" FontWeight="Bold" Foreground="#FFFFF5F5" Height="34" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="12,20,12,0" Name="label1" VerticalAlignment="Top" Width="682" />
+        <Label Content="Tomasulo's Algorithm" FontSize="18" FontWeight="Bold" Foreground="#FFFFF5F5" Height="34" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="12,20,12,0" Name="label1" VerticalAlignment="Top" Width="799" />
+        <GroupBox Header="Instructions Status" Height="174" HorizontalAlignment="Left" Margin="19,120,0,0" Name="groupBox1" VerticalAlignment="Top" Width="570">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" Height="126" HorizontalAlignment="Left" Margin="6,6,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="546" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Reservation Stations" Height="151" HorizontalAlignment="Left" Margin="617,126,0,0" Name="groupBox2" VerticalAlignment="Top" Width="200">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="116*" />
+                    <ColumnDefinition Width="72*" />
+                </Grid.ColumnDefinitions>
+                <DataGrid AutoGenerateColumns="False" Height="99" HorizontalAlignment="Left" Margin="16,16,0,0" Name="dataGrid2" VerticalAlignment="Top" Width="157" Grid.ColumnSpan="2" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Reservation Stations" Height="151" HorizontalAlignment="Left" Margin="19,315,0,0" Name="groupBox3" VerticalAlignment="Top" Width="570">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" Height="116" HorizontalAlignment="Left" Margin="6,6,0,0" Name="dataGrid3" VerticalAlignment="Top" Width="552" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Register Results" Height="100" HorizontalAlignment="Left" Margin="19,472,0,0" Name="groupBox4" VerticalAlignment="Top" Width="727">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" Height="69" HorizontalAlignment="Left" Margin="6,6,0,0" Name="dataGrid4" VerticalAlignment="Top" Width="703" />
+            </Grid>
+        </GroupBox>
+        <Button BorderBrush="SlateGray" BorderThickness="0,0,0,1" Content="Next" FontWeight="Bold" Foreground="White" Height="35" HorizontalAlignment="Left" Margin="684,69,0,0" Name="button2" VerticalAlignment="Top" Width="127">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF468ECB" Offset="0.198" />
+                    <GradientStop Color="#DE0C4872" Offset="0.843" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button BorderBrush="SlateGray" BorderThickness="0,0,0,1" Content="Back" FontWeight="Bold" Foreground="White" Height="35" HorizontalAlignment="Left" Margin="12,69,0,0" Name="button1" VerticalAlignment="Top" Width="127">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF468ECB" Offset="0.198" />
+                    <GradientStop Color="#DE0C4872" Offset="0.843" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

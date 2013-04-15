@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using Microsoft.Win32;
 
 namespace WpfApplication1
 {
@@ -46,10 +47,35 @@ namespace WpfApplication1
 
             dataGrid1.Items.Add(new Item() { Name = "Sherni Minu", Email = "srajaram", UIN = "00905111" });
             dataGrid1.Items.Add(new Item() { Name = "Hari Phaneendra", Email = "hkalyan", UIN = "00901369" });
+            //Add Items to the dropdown box
+            comboBox1.Items.Add("Manual");
+            comboBox1.Items.Add("Automatic");
+            comboBox1.SelectedIndex = 0;
          
         }
         private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new Window1().Show();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openfiledialog = new OpenFileDialog();
+            openfiledialog.ShowDialog();
+            //if(openfiledialog.FileOk)
+           // System.IO.Stream fileStream = openfiledialog.FileOk;
+
 
         }
     }
